@@ -107,9 +107,9 @@ def _workdays(start, end):
 
     # Wenn Endtag auf Wochenende liegt, substrahiere Tage bis Freitag
     while end.isoweekday() > 5:
-        end = add_to_day(end, 1)
+        end = add_to_day(end, -1)
 
-    days = (end - start).days
+    days = (end - start).days + 1
 
     # Count weekends:
     # if weekday start < weekday end: n / 7
